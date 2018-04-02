@@ -6,13 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="css/style.css" type="text/css" rel="stylesheet">
     <link href="css/normalize.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
     <div id="viewport">
         <div id="ports">
-            
         </div>
+        <div id="ship">
+        </div>
+        <button id="sailbutton">Set Sail!</button>
     </div>
     <script src="src/Controller.js"></script>
     <script src="src/Port.js"></script>
@@ -21,7 +24,11 @@
         const controller = new Controller();
         const Dover = new Port('Dover');
         const Calais = new Port('Calais');
-        const itinerary = new Itinerary([Dover, Calais]);
+        const Liverpool = new Port ('Liverpool');
+        const itinerary = new Itinerary([Dover, Calais, Liverpool]);
+        const ship = new Ship(itinerary);
+        controller.renderPorts(itinerary.ports);
+        controller.renderShip();
     </script>
 </body>
 </html>
